@@ -1,0 +1,17 @@
+.cards {
+  margin-top: 80px;
+}
+
+.col {
+  margin-bottom: 25px;
+}
+
+.card {
+  min-height: 250px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */
