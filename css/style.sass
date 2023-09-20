@@ -1,13 +1,22 @@
-.cards
+.cards, .post
     margin-top: 80px
 
 .col
     margin-bottom: 25px
+.cards
+    .card
+        min-height: 250px
+        &-body
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: space-between
 
-.card
-    min-height: 250px
-    &-body
-        display: flex
-        flex-direction: column
-        align-items: flex-start
-        justify-content: space-between
+.post
+    .card
+        border: none
+
+
+.comments
+    .card
+        margin-bottom: 25px
