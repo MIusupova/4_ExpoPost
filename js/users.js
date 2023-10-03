@@ -1,6 +1,6 @@
-const users = fetch('https://jsonplaceholder.typicode.com/users')
+fetch('https://jsonplaceholder.typicode.com/users')
 .then((res) => res.json())
-.then((data) => renderUsers(data.splice(0, 20)))
+.then((data) => renderUsers(data))
 
 const renderUsers = (data) => {
     const card_hol = document.querySelector('.card-hol');
