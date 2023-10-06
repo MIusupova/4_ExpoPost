@@ -42,7 +42,7 @@ const createUsers = (item) => {
     card_body.append(cardWebsite)
     cardWebsite.innerText = item.website
     card_body.innerHTML += 
-    `<a href="#" class="btn btn-dark">Перейти на страницу!</a>`
+    `<a href="user.html" class="btn btn-dark">Перейти на страницу!</a>`
     return card;
 
 }
