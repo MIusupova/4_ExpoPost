@@ -12,7 +12,7 @@ const renderUsers = (data) => {
     data.forEach((item) => {
         const card_users = document.querySelector('.card-users')
         card_users.append(createUsers(item))
-    })
+    });
     
 };
 const createUsers = (item) => {
@@ -50,12 +50,11 @@ const createUsers = (item) => {
 
     cardWebsite.innerText = item.website
     
-    
     return card;
 };
 
 const renderPost = (data) => {
-    const container = document.querySelector('.row');
+    const row = document.querySelector('.row');
     const posts = document.querySelector('.posts')
     posts.innerText = `(${data.lenght})`;
     data.forEach((item) => {
@@ -68,11 +67,10 @@ const renderPost = (data) => {
     col.classList.add('col');
     col.dataset.id = item.id;
     col.dataset.user_id = item.userId;
-    col.append(card);
-  
+    
     const card = document.createElement('div');
     card.classList.add('card');
-    card.append(card)
+    col.append(card)
   
     const card_body = document.createElement('div');
     card_body.classList.add('card-body');
@@ -81,7 +79,7 @@ const renderPost = (data) => {
     const card_title = document.createElement('h5');
     card_title.classList.add('card-title');
     card_title.innerText = 
-    item.title.lenght > 30 ? item.title.substring(0, 30) + "..." : item.title;
+    item.title.lenght > 25 ? item.title.substring(0, 30) + "..." : item.title;
     card_body.append(card_title);
   
   
