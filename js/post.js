@@ -1,4 +1,9 @@
 const postId = window.location.search.substring(8);
+const containerPosts = document.querySelector('.posts');
+const containerComments = document.querySelector('.comments');
+const loader = document.querySelector('.loader')
+containerPosts.style.display = 'none'
+containerComments.style.display = 'none'
 
 fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
   .then((res) => res.json())
@@ -9,9 +14,11 @@ fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
   .then((data) => renderComments(data));
 
 const renderPost = (data) => {
-  const container = document.querySelector('.posts');
+  loader.style.display = 'none'
+  containerPosts.style.display = 'block'
 
-  container.append(createPost(data));
+
+  containerPosts.append(createPost(data));
 };
 
 const createPost = (data) => {
@@ -44,11 +51,11 @@ const createPost = (data) => {
 };
 
 const renderComments = (data) => {
-  const container = document.querySelector('.comments');
   const count = document.querySelector('.count');
+  containerComments.style.display = 'block'
   count.innerText = '(' + data.length + ')';
   console.log(data);
-  data.forEach((item) => container.append(createComment(item)));
+  data.forEach((item) => containerComments.append(createComment(item)));
 };
 
 const createComment = (data) => {
