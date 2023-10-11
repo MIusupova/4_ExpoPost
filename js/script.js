@@ -1,9 +1,13 @@
+const row = document.querySelector('.row');
+const loader = document.querySelector('.loader')
+row.style.display = 'none'
 const answer = fetch('https://jsonplaceholder.typicode.com/posts')
   .then((res) => res.json())
   .then((data) => renderPosts(data.splice(0, 20)));
 
 const renderPosts = (data) => {
-  const row = document.querySelector('.row');
+  loader.style.display = 'none'
+  row.style.display = 'block'
   data.forEach((item) => {
     row.append(createPost(item));
   });

@@ -1,9 +1,13 @@
+const card_hol = document.querySelector('.card-hol');
+const loader = document.querySelector('.loader')
+card_hol.style.display = 'none'
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((res) => res.json())
 .then((data) => renderUsers(data))
 
 const renderUsers = (data) => {
-    const card_hol = document.querySelector('.card-hol');
+  loader.style.display = 'none'
+  card_hol.style.display = 'block'
     data.forEach((item) => {
       card_hol.append(createUsers(item));
     });
