@@ -1,6 +1,7 @@
 const card_hol = document.querySelector('.card-hol');
 const loader = document.querySelector('.loader')
 card_hol.style.display = 'none'
+console.log(card_hol);
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((res) => res.json())
 .then((data) => renderUsers(data))

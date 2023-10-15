@@ -4,7 +4,6 @@ const containerComments = document.querySelector('.comments');
 const loader = document.querySelector('.loader')
 containerPosts.style.display = 'none'
 containerComments.style.display = 'none'
-
 fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
   .then((res) => res.json())
   .then((data) => renderPost(data));
