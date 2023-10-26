@@ -7,7 +7,7 @@ const answer = fetch('https://jsonplaceholder.typicode.com/posts')
 
 const renderPosts = (data) => {
   loader.style.display = 'none'
-  row.style.display = 'block'
+  row.style.display = 'flex'
   data.forEach((item) => {
     row.append(createPost(item));
   });

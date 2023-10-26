@@ -1,10 +1,10 @@
 const userId = window.location.search.substring(4);
 
-fetch(`https://jsonplaceholder.typicode.com/users?id=${userId}`)
+fetch(`https://jsonplaceholder.typicode.com/users?=${userId}`)
   .then((res) => res.json())
   .then((data) => renderUsers(data));
 
-fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+fetch(`https://jsonplaceholder.typicode.com/posts?=${userId}`)
   .then((res) => res.json())
   .then((data) => renderPost(data));
 
@@ -89,7 +89,7 @@ const renderPost = (data) => {
     item.body.lenght > 100 ? item.body.substring(0, 100) + "..." : item.body; 
   
     card_body.append(card_text);
-    card_body.innerHTML += `<a href="post.html?postId=${item.id}" class="btn btn-dark">Открыть пост</a>`;
+  
     
     return col;
   };
