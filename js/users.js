@@ -15,7 +15,7 @@ const renderUsers = (data) => {
   };
 const createUsers = (item) => {
     const card = document.createElement('div')
-    card.classList.add('card', 'w-75');
+    card.classList.add('card');
     card.dataset.id = item.id;
 
     const card_body = document.createElement('div')

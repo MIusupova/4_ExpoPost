@@ -1,10 +1,10 @@
-const userId = window.location.search.substring(4);
 
-fetch(`https://jsonplaceholder.typicode.com/users?=${userId}`)
+
+fetch('https://jsonplaceholder.typicode.com/users?')
   .then((res) => res.json())
   .then((data) => renderUsers(data));
 
-fetch(`https://jsonplaceholder.typicode.com/posts?=${userId}`)
+fetch('https://jsonplaceholder.typicode.com/posts?')
   .then((res) => res.json())
   .then((data) => renderPost(data));
 
@@ -54,7 +54,7 @@ const createUsers = (item) => {
 };
 
 const renderPost = (data) => {
-    const row = document.querySelector('.row');
+    const row = document.querySelector('.post');
     const posts = document.querySelector('.posts')
     posts.innerText = `(${data.lenght})`;
     data.forEach((item) => {
