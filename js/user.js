@@ -54,9 +54,9 @@ const createUsers = (item) => {
 };
 
 const renderPost = (data) => {
-    const row = document.querySelector('.post');
-    const posts = document.querySelector('.posts')
-    posts.innerText = `(${data.lenght})`;
+    const row = document.querySelector('.card-posts');
+    const title = document.querySelector('h4')
+    row.append(title)
     data.forEach((item) => {
       row.append(createPost(item))
     })
