@@ -1,10 +1,10 @@
 
-
-fetch('https://jsonplaceholder.typicode.com/users?')
+const postId = window.location.search.substring(4);
+fetch(`https://jsonplaceholder.typicode.com/users?${postId}`)
   .then((res) => res.json())
   .then((data) => renderUsers(data));
 
-fetch('https://jsonplaceholder.typicode.com/posts?')
+fetch(`https://jsonplaceholder.typicode.com/posts?${postId}`)
   .then((res) => res.json())
   .then((data) => renderPost(data));
 
@@ -54,12 +54,14 @@ const createUsers = (item) => {
 };
 
 const renderPost = (data) => {
+    const count = document.querySelector('.count');
+    count.innerText = '(' + data.length + ')';
     const row = document.querySelector('.card-posts');
     const title = document.querySelector('h4')
     row.append(title)
-    data.forEach((item) => {
+    data.forEach((item) => 
       row.append(createPost(item))
-    })
+    )
   };
   
   const createPost = (item) => {
