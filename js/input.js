@@ -3,6 +3,5 @@ const searchBtn = document.querySelector('#search')
 const input = document.querySelector('.form-control')
 searchBtn.addEventListener('click', (event) => {
  event.preventDefault();
- console.log(window.location);
- window.location.href = window.location.origin + `/search.html?name=${input.value}`;    //href проверить в консоль лог
+ window.location.href = window.location.origin + `/Users/arsenarsanakaev/Desktop/my-project/4_ExpoPost/poisk.html?name=${input.value}`;    //href проверить в консоль лог
 })
