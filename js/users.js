@@ -1,7 +1,6 @@
 const card_hol = document.querySelector('.card-hol');
 const loader = document.querySelector('.loader')
 card_hol.style.display = 'none'
-console.log(card_hol);
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((res) => res.json())
 .then((data) => renderUsers(data))
@@ -47,7 +46,8 @@ const createUsers = (item) => {
     card_body.append(cardWebsite)
     cardWebsite.innerText = item.website
     card_body.innerHTML += 
-    `<a href="user.html" class="btn btn-dark">Перейти на страницу!</a>`
+    `<a href="user.html?id=${item.id} "class="btn btn-dark">Перейти на страницу!</a>`
+    //передача одного id в user через ссылку  ${item.id} это цифра id для каждого user
     return card;
 
 }

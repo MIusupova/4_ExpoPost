@@ -1,19 +1,16 @@
 
-const postId = window.location.search.substring(4);
-fetch(`https://jsonplaceholder.typicode.com/users?${postId}`)
+const userId = window.location.search.substring(4);
+fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
   .then((res) => res.json())
   .then((data) => renderUsers(data));
 
-fetch(`https://jsonplaceholder.typicode.com/posts?${postId}`)
+fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
   .then((res) => res.json())
   .then((data) => renderPost(data));
 
 const renderUsers = (data) => {
-    data.forEach((item) => {
         const card_users = document.querySelector('.card-users')
-        card_users.append(createUsers(item))
-    });
-    
+        card_users.append(createUsers(data))
 };
 const createUsers = (item) => {
     const card = document.createElement('div')

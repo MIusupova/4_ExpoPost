@@ -46,10 +46,3 @@ const createPost = (item) => {
 };
 
 
-//Реализуем логику кнопки поиск
- const searchBtn = document.querySelector('#search')
- searchBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  console.log(window.location);
-  window.location.href = window.location.origin + '/search.html?name=hghhb';    //href проверить в консоль лог
- })
