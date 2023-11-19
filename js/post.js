@@ -84,8 +84,3 @@ const createComment = (data) => {
 
   return card;
 };
-
-const search = (event) => {
-event.preventDefault();
- window.location.href = `https://miusupova.io/4_ExpoPost/pages/poisk.html?name=${input.value}`;    //href проверить в консоль лог
-}
